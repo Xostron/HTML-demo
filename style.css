@@ -1,0 +1,32 @@
+/*test*/
+table {
+  color: gray;
+  border: 2px solid gray;
+  border-radius: 8px;
+  border-spacing: 10px;
+}
+.table-purple {
+  color: purple;
+}
+.table-bold {
+  font-weight: bold;
+}
+.warhammer {
+  color: gray;
+}
+#ideveloper {
+  font-weight: bold;
+  color: orange;
+}
+.list > li {
+  color: blue;
+}
+.font-size-md{
+  font-size: 18px;
+}
+.font-size-md.color-green{
+  color: green;
+}
+.font-size-md.color-red{
+  color: red;
+}
