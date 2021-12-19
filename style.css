@@ -4,6 +4,8 @@ table {
   border: 2px solid gray;
   border-radius: 8px;
   border-spacing: 10px;
+  width: 300px;
+  height: 100px;
 }
 .table-purple {
   color: purple;
@@ -29,4 +31,31 @@ table {
 }
 .font-size-md.color-red{
   color: red;
+}
+p{
+  text-align:center;
+  font-family: Arial;
+  font-size: 14px;
+}
+.block1{
+  color: blue;
+}
+.block2{
+  color: red;
+}
+.block1 p, .block2 p{
+  text-align: left;
+}
+.screen1{
+  width:300px;
+  height:500px;
+  background-color: #e4f1ed;
+  /*background-image: url("tank 78x67.png");*/
+  border: 2px solid gray;
+  border-radius: 16px;
+}
+#title{
+color: gray;
+text-align: left;
+
 }
