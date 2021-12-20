@@ -46,16 +46,96 @@ p{
 .block1 p, .block2 p{
   text-align: left;
 }
-.screen1{
-  width:300px;
-  height:500px;
-  background-color: #e4f1ed;
+/*'Screen 1'*/
+.frame1{
+  /* Фоновое окно */
+  position: relative;
+  width:388px;
+  height:861px;
+  background-color: #ffffff;
   /*background-image: url("tank 78x67.png");*/
   border: 2px solid gray;
   border-radius: 16px;
 }
-#title{
-color: gray;
-text-align: left;
+.frame2{
+  /* вложенное главное окно*/
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
 
+position: absolute;
+width: 348px;
+height: 813px;
+left: calc(50% - 348px/2);
+top: 20px;
+
+background: #FFFFF0;
+}
+
+.lvl1-title{
+  /* 1 строка область для меню*/
+display: flex;
+flex-direction: row;
+align-items: center;
+position: static;
+width: 40px;
+height: 40px;
+left: 0px;
+top: 0px;
+background: rgba(63, 81, 251, 0.1);
+border-radius: 20px;
+}
+.menu{
+  /* Icon menu */
+position: absolute;
+left: 12px;
+right: 0%;
+}
+.title{
+/* Repeat EN 🡢 RU*/
+position: absolute;
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 32px;
+letter-spacing: -0.025em;
+color: #131D25;
+margin: 0px 48px;
+
+}
+
+.lvl2-mode{
+/* Radio button */
+display: flex;
+flex-direction: row;
+padding-top: 30px;
+}
+.my-radio-btn1, .my-radio-btn2{
+display:flex;
+width: calc(348px/2.7);
+font-family: Rubik;
+font-weight: 400;
+font-size: 16px;
+
+}
+.my-radio-btn2{
+margin: 0px 60px;
+}
+.my-radio-btn1{
+margin: 0px 10px;
+}
+.statistic{
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+#text1{
+  padding: 11px;
+  display: flex;
+  flex-direction: row;
+  font-family: Rubik;
+  font-size: 14px;
+  color: gray;
 }

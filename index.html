@@ -3,8 +3,10 @@
   <head>
       <title>Demo training</title>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width", initial-scale=1.0>
       <link rel="shortcut icon" href="https://ecocarbon.ru/favicon.ico"/>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style.css"><!--my css-->
+      <script type="jquery-3.6.0.min.js"></script> <!--library jquery-->
   </head>
   <body>
     <h1 class="warhammer">Hello, world!</h1>
@@ -87,13 +89,42 @@
       <p>Text</p>
       <p>Text</p>
     </div>
+<!--SCREEN-->
+    <!--Canvas-->
+    <div class="frame1">
+      <!--area app-->
+      <div class="frame2">
+        <!--title-->
+        <div class="lvl1-title">
+            <img class="menu" src="menu.png" width="18px" alt="">
+            <div class="title">Repeat EN 🡢 RU</div>
+        </div>
+        <!--mode-->
+        <div class="lvl2-mode">
+          <label class="my-radio-btn1"><input type="radio"  name="mode" value="1" checked>
+          Repeat mode</label>
+          <label class="my-radio-btn2"><input type="radio" name="mode" value="2">
+          Learning mode</label>
+        </div>
+        <!--statistic-->
+        <div class="statistic">
+          <div id="text1">Repeat count:
+            <var>XXX</var>
+          </div>
+          <div id="text1">Last repeat date (RUS):
+            <var>XX.XX.XXXX(-XX)</var>
+          </div>
+          <div id="text1">W/L ratio: 
+            <var>XX%</var>
+          </div>
+        </div>
+        <!--word, transcription, translate, current status-->
+        <!--control btn-->
+        <!--btn move to Screen2-->
 
-    <div class="screen1">
-      <p id="title">Title Screen1</p>
-
+      </div>
     </div>
 
-<script src="app.js">
-</script>
+<script src="app.js"></script><!--my js-script-->
   </body>
 </html>
