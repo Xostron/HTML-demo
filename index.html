@@ -9,87 +9,7 @@
       <script type="jquery-3.6.0.min.js"></script> <!--library jquery-->
   </head>
   <body>
-    <h1 class="warhammer">Hello, world!</h1>
-    <h2>Hello, world!</h2>
-    <h3>Hello, world!</h3>
-    <h4>Hello, world!</h4>
-    <h5>Hello, world!</h5>
-    <h6>Hello, world!</h6>
-    Hello, world - simplle text
-    <p id="ideveloper">Text <br> in <br> tag </p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p>*************************</p>
-    <p><b>text bold type</b></p>
-    <p><em>text italics type1</em></p>
-    <p><i>text italics type2</i></p>
-    <a class="font-size-md color-red" href="https://youtu.be/WtF6PPIG12I" target="_blank"> video on youtube </a>
-    <br>
-    <a class="font-size-md color-green" href="#ideveloper">anchor to "text in tag"</a>
-
-    <ul class="list">
-      <li>element 1 of list </li>
-      <li>element 2 of list </li>
-      <li>element 3 of list </li>
-      <li>element 4 of list </li>
-      <ul>
-        <li>2 lvl - element 1 of list </li>
-        <li>2 lvl - element 2 of list </li>
-        <li>2 lvl - element 3 of list </li>
-      </ul>
-    </ul>
-    <hr>
-
-    <table border="1">
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-        <td>Apple <img src="https://ecocarbon.ru/favicon.ico" height="25"> </td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td>Grapes <img src="https://ecocarbon.ru/favicon.ico" height="25"> </td>
-        <td>6</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="2"> <img src="tank 78x67.png" height="25"> Итог: 8</td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <br><img src="tank 78x67.png" alt="">
-    <br><img src="https://ecocarbon.ru/favicon.ico" alt="">
-
-    <br><input type="text" name="" value="">
-    <br><input type="number" name="" value="">
-    <form class="" action="index.html" method="post">
-      <br><input type="month" name="" value="">
-    </form>
-    <p>*********************END*********************</p>
-    <hr>
-    <!--****************************************************************-->
-
-    <div class="block1">
-      <p id="title">Text</p>
-      <p>Text</p>
-    </div>
-
-    <div class="block2">
-      <p>Text</p>
-      <p>Text</p>
-    </div>
-<!--SCREEN-->
+<!--*********************SCREEN*********************-->
     <!--Canvas-->
     <div class="frame1">
       <!--area app-->
@@ -109,18 +29,49 @@
         <!--statistic-->
         <div class="statistic">
           <div id="text1">Repeat count:
-            <var>XXX</var>
+            <output name="count">XXX</output>
           </div>
-          <div id="text1">Last repeat date (RUS):
-            <var>XX.XX.XXXX(-XX)</var>
+          <div id="text2">Last repeat date (RUS):
+            <output name="date">XX.XX.XXXX (-XX)</output>
           </div>
-          <div id="text1">W/L ratio: 
-            <var>XX%</var>
+          <div id="text3">W/L ratio:
+            <output name="ratio">XX%</output>
           </div>
         </div>
         <!--word, transcription, translate, current status-->
+        <div class="group">
+          <div class="my-output-field">
+            <div class="my-field-label">Word</div>
+            <output class="my-field-out" name="result">Value</output>
+          </div>
+          <div class="my-output-field">
+            <div class="my-field-label">Transcription</div>
+            <output class="my-field-out" name="result">Value</output>
+          </div>
+          <div class="my-output-field">
+            <div class="my-field-label">Translate</div>
+            <output class="my-field-out" name="result">Value</output>
+          </div>
+          <div id="curr-count">
+            Count:
+            <output name="result">XX (XX mistakes / XX%)</output>
+          </div>
+        </div>
         <!--control btn-->
+        <div class="my-control-H">
+          <img src="Iconly\Light-outline\Volume Up.png" height="50">
+        </div>
+        <div id="sub-row">
+          <img src="Iconly\Light-outline\Close Square.png" height="50">
+          <img src="Iconly\Light-outline\Tick Square.png" height="50">
+        </div>
+        <div class="my-control-L">
+          <img src="Iconly\Light-outline\Filter.png" height="50">
+        </div>
         <!--btn move to Screen2-->
+        <div class="my-btn">
+          GO TO WORDS-TABLE
+        </div>
 
       </div>
     </div>

@@ -1,80 +1,29 @@
-/*test*/
-table {
-  color: gray;
-  border: 2px solid gray;
-  border-radius: 8px;
-  border-spacing: 10px;
-  width: 300px;
-  height: 100px;
-}
-.table-purple {
-  color: purple;
-}
-.table-bold {
-  font-weight: bold;
-}
-.warhammer {
-  color: gray;
-}
-#ideveloper {
-  font-weight: bold;
-  color: orange;
-}
-.list > li {
-  color: blue;
-}
-.font-size-md{
-  font-size: 18px;
-}
-.font-size-md.color-green{
-  color: green;
-}
-.font-size-md.color-red{
-  color: red;
-}
-p{
-  text-align:center;
-  font-family: Arial;
-  font-size: 14px;
-}
-.block1{
-  color: blue;
-}
-.block2{
-  color: red;
-}
-.block1 p, .block2 p{
-  text-align: left;
-}
-/*'Screen 1'*/
+/**********'Screen 1'************************/
 .frame1{
-  /* Фоновое окно */
-  position: relative;
+  /* Main window*/
+  display flex;
   width:388px;
   height:861px;
   background-color: #ffffff;
-  /*background-image: url("tank 78x67.png");*/
-  border: 2px solid gray;
+  border: 2px solid #B4CCFB;
   border-radius: 16px;
 }
-.frame2{
-  /* вложенное главное окно*/
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
 
-position: absolute;
+.frame2{
+  /* Content screen*/
+display: flex;
+position: relative;
+flex-direction: column;
+padding: 0px;
 width: 348px;
 height: 813px;
 left: calc(50% - 348px/2);
-top: 20px;
-
-background: #FFFFF0;
+background: #FFFFFF;
+top: 24px;
 }
 
 .lvl1-title{
-  /* 1 строка область для меню*/
+  /* AREA #1 - element of menu (circle)*/
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -98,44 +47,130 @@ position: absolute;
 font-family: IBM Plex Sans;
 font-style: normal;
 font-weight: 400;
-font-size: 32px;
+font-size: 34px;
 line-height: 32px;
 letter-spacing: -0.025em;
 color: #131D25;
 margin: 0px 48px;
-
 }
 
 .lvl2-mode{
-/* Radio button */
-display: flex;
-flex-direction: row;
+/*AREA #2 - Radio buttons */
+display: grid;
+grid-template-columns: auto auto;
+grid-column-gap: 42px;
+width:348px;
 padding-top: 30px;
 }
 .my-radio-btn1, .my-radio-btn2{
 display:flex;
-width: calc(348px/2.7);
+align-items: center;
+width: calc(content(width));
 font-family: Rubik;
 font-weight: 400;
-font-size: 16px;
-
-}
-.my-radio-btn2{
-margin: 0px 60px;
+font-size: 20px;
 }
 .my-radio-btn1{
-margin: 0px 10px;
+padding-left: 10px;
+/*background-color: #FF0FF0;*/
 }
+/*.my-radio-btn2{
+background-color: #A20FF0;
+}*/
+
 .statistic{
+  /*AREA #3 - info*/
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  align-items: flex-start;
+  padding: 30px 0px 0px 0px;
+  /*background-color: #00FFFF;*/
 }
-#text1{
-  padding: 11px;
+#text1, #text2, #text3{
+  padding: 0px 0px 25px 0px;
   display: flex;
+  align-items: flex-start;
   flex-direction: row;
   font-family: Rubik;
+  font-size: 16px;
+  color: #A7A8AB;;
+}
+/* for debug
+#text1{
+  background-color: #A20FF0;
+}
+#text2{
+  background-color: #FF0FF0;
+}
+#text3{
+  background-color: #D80FAA;
+}*/
+
+.group{
+  /*AREA #4 - Output value*/
+  display: grid;
+  grid-template-rows: 3;
+  grid-gap: 25px;
+  color:#A7A8AB;
+  justify-items: center;
+}
+.my-output-field{
+  /* draw output field*/
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 348px;
+height: 56px;
+border: 2px solid #B4CCFB;
+border-radius: 16px;
+padding: 0px 0px 0px 0px;
+background: #FFFFFF;
+}
+.my-field-label{
+  padding: 4px 0px 0px 24px;
+  font-family: Rubik;
+  font-weight: 400;
   font-size: 14px;
-  color: gray;
+  color: #A7A8AB;
+}
+.my-field-out{
+  padding: 4px 0px 0px 24px;
+  font-weight: 400;
+  font-family: Rubik;
+  font-size: 22px;
+  color: #131D25;
+}
+
+.my-control-H, .my-control-L{
+  /*Control panel for repeat words*/
+  display: grid;
+  justify-items: center;
+  width: 348px;
+}
+.my-control-H{
+  padding-top: 30px;
+}
+.my-control-L{
+  padding-bottom:30px;
+  margin-top: calc(-45px/4);
+}
+#sub-row{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  width: 348px;
+  grid-column-gap: 215px;
+  margin-top: calc(-45px/4);
+}
+
+.my-btn{
+  /*button move to Screen2*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 348px;
+  height: 56px;
+  border: 2px solid #B4CCFB;
+  border-radius: 16px;
+  margin-top: 30px;
 }
