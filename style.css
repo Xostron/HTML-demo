@@ -2,8 +2,8 @@
 .frame1{
   /* Main window*/
   display flex;
-  width:388px;
-  height:861px;
+  width:380px;
+  height:800px;
   background-color: #ffffff;
   border: 2px solid #B4CCFB;
   border-radius: 16px;
@@ -13,70 +13,133 @@
   /* Content screen*/
 display: flex;
 position: relative;
-flex-direction: column;
+flex-direction:column;
 padding: 0px;
-width: 348px;
-height: 813px;
+width: 340px;
+height: 780px;
 left: calc(50% - 348px/2);
-background: #FFFFFF;
-top: 24px;
+top:10px;
+/* background-color: #F8FFAF; */
 }
 
 .lvl1-title{
-  /* AREA #1 - element of menu (circle)*/
+  /* AREA #1 */
 display: flex;
+position: relative;
 flex-direction: row;
 align-items: center;
-position: static;
+width: 340px;
+height: 40px;
+overflow: hidden;
+/* background-color: #F8FF0F; */
+}
+.lvl1-title .background_menu{
+  /*element of menu (circle)*/
+position: absolute;
 width: 40px;
 height: 40px;
-left: 0px;
-top: 0px;
-background: rgba(63, 81, 251, 0.1);
-border-radius: 20px;
+background-color: #B4CCFB;
+opacity: 0.5;
+border-radius: 40px;
 }
 .menu{
   /* Icon menu */
 position: absolute;
-left: 12px;
-right: 0%;
+top:24%;
+left:28%;
 }
-.title{
+.lvl1-title .title{
 /* Repeat EN 🡢 RU*/
 position: absolute;
 font-family: IBM Plex Sans;
 font-style: normal;
 font-weight: 400;
 font-size: 34px;
-line-height: 32px;
+line-height: 35px;
 letter-spacing: -0.025em;
 color: #131D25;
-margin: 0px 48px;
+left: 48px;
 }
 
+/***************Radio button*****************************/
 .lvl2-mode{
 /*AREA #2 - Radio buttons */
 display: grid;
 grid-template-columns: auto auto;
-grid-column-gap: 42px;
-width:348px;
+grid-column-gap: 50px;
+width:340px;
 padding-top: 30px;
 }
-.my-radio-btn1, .my-radio-btn2{
-display:flex;
-align-items: center;
-width: calc(content(width));
-font-family: Rubik;
-font-weight: 400;
-font-size: 20px;
+.custom-radio{
+  font-family: Rubik;
+  font-weight: 400;
+  font-size: 18px;
 }
-.my-radio-btn1{
-padding-left: 10px;
-/*background-color: #FF0FF0;*/
+/* для элемента input c type="radio" */
+.custom-radio>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
-/*.my-radio-btn2{
-background-color: #A20FF0;
-}*/
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio>span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio>span::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: #B4CCFB;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio>input:not(:disabled):active+span::before {
+  background-color: #B4CCFB;
+  border-color: #B4CCFB;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio>input:focus+span::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio>input:focus:not(:checked)+span::before {
+  border-color: #B4CCFB;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio>input:checked+span::before {
+  border-color:#B1CCFF;
+  background-color: #B1CCFF;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio>input:disabled+span::before {
+  background-color: #e9ecef;
+}
+
+
+
 
 .statistic{
   /*AREA #3 - info*/
@@ -119,7 +182,7 @@ background-color: #A20FF0;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-width: 348px;
+width: 340px;
 height: 56px;
 border: 2px solid #B4CCFB;
 border-radius: 16px;
@@ -140,12 +203,14 @@ background: #FFFFFF;
   font-size: 22px;
   color: #131D25;
 }
-
+.group2{
+  position:relative;
+}
 .my-control-H, .my-control-L{
   /*Control panel for repeat words*/
   display: grid;
   justify-items: center;
-  width: 348px;
+  width: 340px;
 }
 .my-control-H{
   padding-top: 30px;
@@ -158,7 +223,7 @@ background: #FFFFFF;
   display: grid;
   grid-template-columns: auto auto;
   justify-items: center;
-  width: 348px;
+  width: 340px;
   grid-column-gap: 215px;
   margin-top: calc(-45px/4);
 }
@@ -168,9 +233,17 @@ background: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 348px;
+  width: 340px;
   height: 56px;
   border: 2px solid #B4CCFB;
   border-radius: 16px;
-  margin-top: 30px;
+  margin-top: 10px;
+  font-weight: 400;
+  font-family: Rubik;
+  font-size: 16px;
+  /* background-color: #F8FFAF; */
+}
+
+.eff-btn{
+  opacity:  0.5;
 }

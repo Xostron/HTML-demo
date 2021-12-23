@@ -3,10 +3,14 @@
   <head>
       <title>Demo training</title>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width", initial-scale=1.0>
+      
       <link rel="shortcut icon" href="https://ecocarbon.ru/favicon.ico"/>
       <link rel="stylesheet" href="style.css"><!--my css-->
-      <script type="jquery-3.6.0.min.js"></script> <!--library jquery-->
+      <!--my js-script-->
+
+      <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="jqueryui.js"></script>
+      <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
 <!--*********************SCREEN*********************-->
@@ -16,15 +20,20 @@
       <div class="frame2">
         <!--title-->
         <div class="lvl1-title">
-            <img class="menu" src="menu.png" width="18px" alt="">
+            <div class="background_menu">
+              <img class="menu" src="menu.png" width="18px" onclick="menu_run()" alt="">
+            </div>
+
             <div class="title">Repeat EN 🡢 RU</div>
         </div>
         <!--mode-->
         <div class="lvl2-mode">
-          <label class="my-radio-btn1"><input type="radio"  name="mode" value="1" checked>
-          Repeat mode</label>
-          <label class="my-radio-btn2"><input type="radio" name="mode" value="2">
-          Learning mode</label>
+          <label class="custom-radio">
+            <input type="radio"  name="mode" value="1" checked>
+          <span>Repeat mode</span></label>
+          <label class="custom-radio">
+            <input type="radio" name="mode" value="2">
+          <span>Learning mode</span></label>
         </div>
         <!--statistic-->
         <div class="statistic">
@@ -58,24 +67,27 @@
           </div>
         </div>
         <!--control btn-->
-        <div class="my-control-H">
-          <img src="Iconly\Light-outline\Volume Up.png" height="50">
+        <div class="group2">
+          <div class="my-control-H">
+            <img class="eff-btn" src="Iconly\Light-outline\Volume Up.png" height="45">
+          </div>
+          <div id="sub-row">
+            <img class="eff-btn" src="Iconly\Light-outline\Close Square.png" height="45">
+            <img class="eff-btn" src="Iconly\Light-outline\Tick Square.png" height="45">
+          </div>
+          <div class="my-control-L">
+            <img class="eff-btn" src="Iconly\Light-outline\Filter.png" height="45">
+          </div>
         </div>
-        <div id="sub-row">
-          <img src="Iconly\Light-outline\Close Square.png" height="50">
-          <img src="Iconly\Light-outline\Tick Square.png" height="50">
-        </div>
-        <div class="my-control-L">
-          <img src="Iconly\Light-outline\Filter.png" height="50">
-        </div>
+
         <!--btn move to Screen2-->
-        <div class="my-btn">
-          GO TO WORDS-TABLE
+        <div class="eff-btn">
+          <div class="my-btn">GO TO WORDS-TABLE</div>
         </div>
+
 
       </div>
     </div>
 
-<script src="app.js"></script><!--my js-script-->
   </body>
 </html>
