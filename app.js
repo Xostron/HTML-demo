@@ -1,59 +1,72 @@
 
+
+var repeatCount = 70; //
+var date_repeat = "24.12.2021";
+var ratio_repeat = "95%";
+var learningWords = 750;
+var date_learning = "21.12.2021"
+var ratio_learning = "78%";
+var light_field = "#86E9B5";
+
+document.getElementById("translate_result").style.opacity = '0';
+document.getElementById("text1").innerHTML = 'Repeat count: '+ repeatCount;
+document.getElementById("text2").innerHTML = 'Last repeat date (RUS): '+ date_repeat;
+document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_repeat;
+
 $(document).ready(function()
 {
-  $(".item").children("div.title5").animate({top: -60}, 300);
-  $(".item").children("div.desc").animate({bottom: -40}, 300);
-  $(".item").hover(
-  			function()
-  			{
-  				//$(this).children("img").stop().animate({opacity: 0.8}, 700, "easeInSine");
-  				$(this).children("div.title5").stop().animate({top: 0}, 700, "easeOutBounce");
-  				$(this).children("div.desc").stop().animate({bottom: 0}, 700, "easeOutBounce");
-  			},
-  			function(){
-  				//$(this).children("img").stop().animate({opacity: 1}, 700);
-  				$(this).children("div.title5").stop().animate({top: -60}, 500);
-  				$(this).children("div.desc").stop().animate({bottom: -40}, 400);
-  			}
-  			);
-        $(".title5, .desc").hover(
-			function()
-			{
-				$(this).stop().animate({backgroundColor: "#333"}, 700, "easeOutSine");
-			},
-			function(){
-				$(this).stop().animate({backgroundColor: "#000"}, 700);
-			}
-			);
-/* test title down
-$(".lvl1-title").children("div.title").animate({top: -50}, 1000);
-    $(".lvl1-title").hover(
+  /*effect for the buttons*/
+  $(".background_menu, .eff-btn").hover(
+    function()
+    {
+      $(this).stop().animate({opacity: 1}, 400);
+    },
+    function(){
+      $(this).stop().animate({opacity: 0.5}, 400);
+    }
+    );
+
+
+//light field words
+    $(".my-output-field").hover(
       function()
       {
-        $(this).children("div.title").stop().animate({top: 0}, 700, "easeOutBounce");
+        $(this).stop().animate({backgroundColor: light_field}, 400);
       },
       function(){
-        $(this).children("div.title").stop().animate({top: -50}, 500);
-      });
-      $(".title").hover(
-        function()
-  			{
-  				$(this).stop().animate({backgroundColor: "#AAAAAA"}, 700, "easeOutSine");
-  			},
-  			function(){
-  				$(this).stop().animate({backgroundColor: "#FFFFFF"}, 700);
-  			}
-  			);
-*/
+        $(this).stop().animate({backgroundColor: '#FFFFFF'}, 400);
+      }
+    );
 
-        /*background menu*/
-        $(".background_menu, .eff-btn").hover(
-          function()
-          {
-            $(this).stop().animate({opacity: 1}, 400);
-          },
-          function(){
-            $(this).stop().animate({opacity: 0.5}, 400);
-          }
-          );
 });
+
+
+//toggle mode (repeat / learning)
+function change_mode(){
+  var repeat = document.getElementById("mode");
+  if (repeat.checked){
+    document.getElementById("translate_result").style.opacity = '0';
+    document.getElementById("text1").innerHTML = 'Repeat count: '+ repeatCount;
+    document.getElementById("text2").innerHTML = 'Last repeat date (RUS): '+ date_repeat;
+    document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_repeat;
+    light_field = "#86E9B5";
+  }else {
+    document.getElementById("translate_result").style.opacity = '1';
+    document.getElementById("text1").innerHTML = 'Learning words: '+ learningWords;
+    document.getElementById("text2").innerHTML = 'Last learning date (RUS): '+ date_learning;
+    document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_learning;
+    light_field = "#2c9ab1";
+  }
+}
+
+//control btn: pos / neg
+function next_right(){
+  light_field = "#86E9B5";
+$("#field_translate").stop().animate({backgroundColor: light_field}, 400);
+document.getElementById("translate_result").style.opacity = '1';
+}
+function next_wrong(){
+  light_field = "#FF9062";
+$("#field_translate").stop().animate({backgroundColor: light_field}, 400);
+document.getElementById("translate_result").style.opacity = '1';
+}

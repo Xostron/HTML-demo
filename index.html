@@ -3,14 +3,10 @@
   <head>
       <title>Demo training</title>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width", initial-scale=1.0>
+      <meta name="viewport" content="width=device-width", initial-scale=1.0, "height=device-height">
       <link rel="shortcut icon" href="https://ecocarbon.ru/favicon.ico"/>
       <link rel="stylesheet" href="style.css"><!--my css-->
-      <!--my js-script-->
 
-      <script type="text/javascript" src="jquery.js"></script>
-      <script type="text/javascript" src="jqueryui.js"></script>
-      <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
 <!--*********************SCREEN*********************-->
@@ -29,37 +25,31 @@
         <!--mode-->
         <div class="lvl2-mode">
           <label class="custom-radio">
-            <input type="radio"  name="mode" value="1" checked>
+            <input type="radio"  name="mode" id="mode" value="1" onclick="change_mode()" checked>
           <span>Repeat mode</span></label>
           <label class="custom-radio">
-            <input type="radio" name="mode" value="2">
+            <input type="radio" name="mode" id="mode" value="2" onclick="change_mode()">
           <span>Learning mode</span></label>
         </div>
         <!--statistic-->
         <div class="statistic">
-          <div id="text1">Repeat count:
-            <output name="count">XXX</output>
-          </div>
-          <div id="text2">Last repeat date (RUS):
-            <output name="date">XX.XX.XXXX (-XX)</output>
-          </div>
-          <div id="text3">W/L ratio:
-            <output name="ratio">XX%</output>
-          </div>
+          <div id="text1">Repeat count:</div>
+          <div id="text2">Last repeat date (RUS):</div>
+          <div id="text3">W/L ratio:</div>
         </div>
         <!--word, transcription, translate, current status-->
-        <div class="group">
+        <div class="group" name = "control">
           <div class="my-output-field">
             <div class="my-field-label">Word</div>
-            <output class="my-field-out" name="result">Value</output>
+            <output class="my-field-out" name="result">Значение</output>
           </div>
           <div class="my-output-field">
             <div class="my-field-label">Transcription</div>
-            <output class="my-field-out" name="result">Value</output>
+            <output class="my-field-out" name="result">[ˈvæljuː]</output>
           </div>
-          <div class="my-output-field">
+          <div class="my-output-field" id="field_translate" name="translate">
             <div class="my-field-label">Translate</div>
-            <output class="my-field-out" name="result">Value</output>
+            <output class="my-field-out" name="result" id="translate_result">Value</output>
           </div>
           <div id="curr-count">
             Count:
@@ -72,8 +62,8 @@
             <img class="eff-btn" src="Iconly\Light-outline\Volume Up.png" height="45">
           </div>
           <div id="sub-row">
-            <img class="eff-btn" src="Iconly\Light-outline\Close Square.png" height="45">
-            <img class="eff-btn" src="Iconly\Light-outline\Tick Square.png" height="45">
+            <img class="eff-btn" src="Iconly\Light-outline\Close Square.png" height="45" onclick="next_wrong()">
+            <img class="eff-btn" src="Iconly\Light-outline\Tick Square.png" height="45" onclick="next_right()">
           </div>
           <div class="my-control-L">
             <img class="eff-btn" src="Iconly\Light-outline\Filter.png" height="45">
@@ -88,6 +78,10 @@
 
       </div>
     </div>
+    <!--my js-script-->
 
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jqueryui.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
