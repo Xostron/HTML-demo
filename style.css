@@ -2,10 +2,11 @@
 .frame1{
   /* Main window*/
   display flex;
+  position: absolute;
   width:380px;
   height:800px;
   background-color: #ffffff;
-  border: 2px solid #B4CCFB;
+  border: 2px solid #FFFFFF;/*#B4CCFB;*/
   border-radius: 16px;
 }
 

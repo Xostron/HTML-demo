@@ -8,10 +8,12 @@ var date_learning = "21.12.2021"
 var ratio_learning = "78%";
 var light_field = "#86E9B5";
 
-document.getElementById("translate_result").style.opacity = '0';
+//init
+
 document.getElementById("text1").innerHTML = 'Repeat count: '+ repeatCount;
 document.getElementById("text2").innerHTML = 'Last repeat date (RUS): '+ date_repeat;
 document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_repeat;
+document.getElementById("translate_result").style.opacity = '0';
 
 $(document).ready(function()
 {
@@ -19,24 +21,27 @@ $(document).ready(function()
   $(".background_menu, .eff-btn").hover(
     function()
     {
-      $(this).stop().animate({opacity: 1}, 400);
+      $(this).stop().animate({opacity: 1}, 200);
     },
     function(){
-      $(this).stop().animate({opacity: 0.5}, 400);
+      $(this).stop().animate({opacity: 0.5}, 200);
     }
     );
 
-
+//
+// if light_field != "#FFFFFF"{
+//
+// }
 //light field words
-    $(".my-output-field").hover(
+    /*$(".my-output-field").hover(
       function()
       {
-        $(this).stop().animate({backgroundColor: light_field}, 400);
+        $(this).stop().animate({backgroundColor: light_field}, 200);
       },
       function(){
-        $(this).stop().animate({backgroundColor: '#FFFFFF'}, 400);
+        $(this).stop().animate({backgroundColor: '#FFFFFF'}, 200);
       }
-    );
+    );*/
 
 });
 
@@ -44,29 +49,33 @@ $(document).ready(function()
 //toggle mode (repeat / learning)
 function change_mode(){
   var repeat = document.getElementById("mode");
-  if (repeat.checked){
+  if (repeat.checked)
+  {
     document.getElementById("translate_result").style.opacity = '0';
     document.getElementById("text1").innerHTML = 'Repeat count: '+ repeatCount;
     document.getElementById("text2").innerHTML = 'Last repeat date (RUS): '+ date_repeat;
     document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_repeat;
     light_field = "#86E9B5";
-  }else {
+  }
+  else 
+  {
     document.getElementById("translate_result").style.opacity = '1';
     document.getElementById("text1").innerHTML = 'Learning words: '+ learningWords;
     document.getElementById("text2").innerHTML = 'Last learning date (RUS): '+ date_learning;
     document.getElementById("text3").innerHTML = 'W/L ratio: '+ ratio_learning;
     light_field = "#2c9ab1";
   }
+  document.getElementById("field_translate").style.backgroundColor = "#FFFFFF";
 }
 
 //control btn: pos / neg
 function next_right(){
   light_field = "#86E9B5";
-$("#field_translate").stop().animate({backgroundColor: light_field}, 400);
-document.getElementById("translate_result").style.opacity = '1';
+  $("#field_translate").stop().animate({backgroundColor: light_field}, 200);
+  document.getElementById("translate_result").style.opacity = '1';
 }
 function next_wrong(){
   light_field = "#FF9062";
-$("#field_translate").stop().animate({backgroundColor: light_field}, 400);
-document.getElementById("translate_result").style.opacity = '1';
+  $("#field_translate").stop().animate({backgroundColor: light_field}, 200);
+  document.getElementById("translate_result").style.opacity = '1';
 }
