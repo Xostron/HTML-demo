@@ -2,8 +2,8 @@
 <html>
   <head>
       <title>Demo training</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width", initial-scale=1.0, "height=device-height">
+      <meta charset="utf-8"> 
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
       <link rel="shortcut icon" href="https://ecocarbon.ru/favicon.ico"/>
       <link rel="stylesheet" href="style.css"><!--my css-->
 
@@ -15,12 +15,13 @@
       <!--area app-->
       <div class="frame2">
         <!--title-->
+
         <div class="lvl1-title">
-            <div class="background_menu">
+            <div class="background_menu" id="background_menu">
               <img class="menu" src="menu.png" width="18px" onclick="menu_run()" alt="">
+              <label class="title" for="background_menu">English</label>
             </div>
 
-            <div class="title">English</div>
         </div>
         <!--mode-->
         <div class="lvl2-mode">
@@ -71,8 +72,8 @@
         </div>
 
         <!--btn move to Screen2-->
-        <div class="eff-btn">
-          <div class="my-btn">GO TO WORDS-TABLE</div>
+        <div class="eff-btn" id="eff=btn">
+          <label class="my-btn" for="eff-btn">GO TO WORDS-TABLE</label>
         </div>
 
 

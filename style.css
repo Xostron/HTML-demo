@@ -56,10 +56,11 @@ font-family: IBM Plex Sans;
 font-style: normal;
 font-weight: 400;
 font-size: 34px;
-line-height: 35px;
+line-height: 38px;
 letter-spacing: -0.025em;
 color: #131D25;
 left: 48px;
+opacity: 1;
 }
 
 /***************Radio button*****************************/
