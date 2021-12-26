@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Распределение нагрузок</title>
+		<meta charset="utf-8">
+		<style>
+		#maininput {
+			width: 60%;
+			height: 20%;
+		}
+		#frm{
+			display:block;
+		}
+		</style>
+		<script type="text/javascript">
+		function sum(arr){
+			return arr.reduce(function(sum, current){return sum+current;},0);}
+		function getMin(arr){
+			return arr.reduce(function(res, cur, index, mas){if (sum(cur)<sum(mas[res])) res=index; return res;}, 0);}
+		function splitter(arr){
+			var res = [[],[],[]];
+			var aux = arr.slice();
+			aux.sort(function(a,b){return b-a;});
+			aux.forEach(function(item){res[getMin(res)].push(item);});
+			return res;}
+		function getSum(arr){
+			var res = arr.slice();
+			return res.map(function(x){return sum(x);});}
+		function format(arr){
+			var str = "<span>";
+			arr.forEach(function(item){str = str + item + ', ';});
+			return str + "</span>";
+		}
+		function output(arr){
+			var summ = getSum(arr);
+			var resid = document.getElementById('results');
+			arr.forEach(function(item, i){
+				var elem = document.createElement('p');
+				elem.innerHTML = "Фаза №" + (i+1) + " = " + format(item);
+				resid.appendChild(elem);
+			});
+			summ.forEach(function(item, i){
+				var elem = document.createElement('p');
+				elem.innerHTML = "Суммарная мощность фазы №" + (i+1) + " = " + item;
+				resid.appendChild(elem);
+			});
+			document.form.but.value = "Очистить"
+		}
+		function clear(){
+			document.form.but.value = "Распределить";
+			//document.form.text.value = null;
+			document.getElementById("results").innerHTML = "";
+		}
+		function run(){
+			var stat = document.form.but.value;
+			if(stat=="Распределить"){
+				var inputstr = document.form.text.value;
+				if(!inputstr){
+					alert("Введите данные");
+					return;
+				}
+				var parse = inputstr.match(/([0-9]+[.|,][0-9])|([0-9][.|,][0-9]+)|([0-9]+)/g)
+				if(parse){
+					var arr = parse.map(function(x){return Number(x.replace(',','.'))});
+					if (arr.length < 3) alert("Число нагрузок меньше трех!");
+					var res = splitter(arr);
+					output(res);
+				}else{
+					alert("Неправильный формат данных");
+					return;
+				}
+			} else clear();
+		}
+		</script>
+	</head>
+	<body>
+		<center>
+			<form id="frm" name="form" action="">
+				<p><textarea id="maininput" type="text" name="text"></textarea></p>
+				<p><input type="button" value="Распределить" onclick="run()"  name="but"></p>
+			</form>
+			<div id="results">
+			</div>
+		</center>
+	</body>
+</html>
