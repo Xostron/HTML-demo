@@ -1,6 +1,6 @@
 body{
 position: relative;
-max-width: 70em;
+max-width: 55em;
 margin: 5em auto 5em;
 background: #fff;
 color: #333;
@@ -63,12 +63,12 @@ border: 1px solid #bbb;}
   color: #fff;
 }
 .name, .career-objective{
-  font-size: 1.4em;
+  font-size: 18px;
   padding-bottom: 0.8em;
 }
 .surname, .specialty{
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 22px;
 }
 /*Область для полей Профиль, навыки*/
 .profile{
@@ -80,7 +80,7 @@ border: 1px solid #bbb;}
   color: #fff;
   font-family: sans-serif;
   font-weight: 100;
-  font-size: 1em;
+  font-size: 14px;
   /* background-color: #000; */
   justify-items: start;
 }
@@ -88,9 +88,10 @@ border: 1px solid #bbb;}
 .title-profile{
   font-family: sans-serif;
   font-weight: 900;
-  font-size: 1.68em;
+  font-size: 22px;
   color: #037bf0;
   width:100%;
+
   /* border-bottom: 0.1em solid #037bf0; */
 }
 .title-2{
@@ -105,6 +106,7 @@ border: 1px solid #bbb;}
   display:grid;
   grid-template-columns: auto auto;
   grid-column-gap: .9em;
+  align-items: center;
 }
 /*стилизация тега ссылок*/
 a:link {
@@ -128,7 +130,7 @@ a:active {
 .column2{
   display: flex;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: rgb(255, 255, 255);
   align-items:flex-start;
   width: 70%;
 }
@@ -136,18 +138,19 @@ a:active {
   display:grid;
   grid-template-columns: 15% 80%;
   grid-column-gap: 1%;
-  margin-top: 1%;
+  margin-top: 2%;
   margin-left: 11%;
   margin-right: 5%;
   font-family: sans-serif;
-  font-size: 20px;
-  /* background-color: #F18daa; */
+  font-size: 16px;
+  /* background-color: #c44065; */
   width:80%;
+  text-align:inherit;
 }
 .experience-text{
 font-family: sans-serif;
-font-size: 20px;
-margin-top: 1%;
+font-size: 16px;
+margin-top: 2%;
 margin-left: 11%;
 margin-right: 5%;
 }
@@ -156,12 +159,12 @@ margin-right: 5%;
   grid-template-columns: 1% auto;
   grid-column-gap: 8%;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 2%;
   margin-left: 11%;
-  margin-right: 5%;
-  /* background-color: #A2FF01; */
+  /* background-color: #A2FF01;  */
   width:76%;
+  align-items: center;
 }
 
 .col2-title{
@@ -169,18 +172,19 @@ margin-right: 5%;
   grid-template-columns: 5% 85%;
   grid-column-gap: 1%;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 1%;
-  width:90%;
+  width:95%;
+  align-items: center;
 }
 .col2-label{
   font-family: sans-serif;
   color: #000;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 /*стилизация тега ссылок*/
