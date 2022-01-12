@@ -17,7 +17,7 @@ document.getElementById("my-field-label_3").style.color = "#A7A8AB";
 $(document).ready(function()
 {
   /*effect for the buttons*/
-  $(".background_menu, .eff-btn").hover(
+  $(".menu__bg, .eff-btn, .btn__src1, #ok_btn").hover(
     function()
     {
       $(this).stop().animate({opacity: 1}, 200);
